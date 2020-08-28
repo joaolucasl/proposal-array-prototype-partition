@@ -57,3 +57,4 @@ for (const number of numbers) {
 - Lodash - [`_.partition(collection, predicate)`](https://lodash.com/docs/4.17.15#partition)
 - Underscore - [`_.partition(list, predicate)`](http://underscorejs.org/#partition)
 - Ramda - [`R.partition(predicate, filterable)`](https://ramdajs.com/docs/#partition)
+- RxJS - [`Observable.partition(predicate)`](https://www.learnrxjs.io/learn-rxjs/operators/transformation/partition)
