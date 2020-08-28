@@ -61,9 +61,9 @@ for (const number of numbers) {
 - OCaml - [`List.partition`](https://caml.inria.fr/pub/docs/manual-ocaml/libref/List.html)
 - Elixir - [`Enum.split_with`](https://hexdocs.pm/elixir/Enum.html#split_with/2)
 - Kotlin - [`Collection.partition`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/partition.html)
-- Erlang = [`List.partition`](https://erlang.org/doc/man/lists.html#partition-2)
-- Rust = [`trait.Iterator.partition`](https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.partition)
-- Common Lisp = [`partition`](https://common-lisp.net/project/bese/docs/arnesi/html/api/function_005FIT.BESE.ARNESI_003A_003APARTITION.html)
+- Erlang - [`List.partition`](https://erlang.org/doc/man/lists.html#partition-2)
+- Rust - [`trait.Iterator.partition`](https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.partition)
+- Common Lisp - [`partition`](https://common-lisp.net/project/bese/docs/arnesi/html/api/function_005FIT.BESE.ARNESI_003A_003APARTITION.html)
 
 ### Javascript Ecosystem
 - Lodash - [`_.partition(collection, predicate)`](https://lodash.com/docs/4.17.15#partition)
