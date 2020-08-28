@@ -56,3 +56,4 @@ for (const number of numbers) {
 ### Javascript Ecosystem
 - Lodash - [`_.partition(collection, predicate)`](https://lodash.com/docs/4.17.15#partition)
 - Underscore - [`_.partition(list, predicate)`](http://underscorejs.org/#partition)
+- Ramda - [`R.partition(predicate, filterable)`](https://ramdajs.com/docs/#partition)
