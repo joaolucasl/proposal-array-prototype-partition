@@ -1,6 +1,16 @@
 # `Array.prototype.partition`
-A proposal for an utility function for splitting an Array using a predicate.
 
+A proposal for an utility function for splitting an Array using a predicate.
+You can find an initial implementation of a polyfill [here](polyfill.js)
+
+## Usage:
+
+```js
+const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+const isEven = (n) => n % 2 === 0;
+
+const [even, odd] = numbers.partition(n => isEven(n));
+```
 
 ## Why not use `.filter` or `.reduce`?
 While `.filter` is a helpful way of eliminating unwanted items from your collection by filtering them out, wanting to simply remove the items is not always the case. The `.reduce` function can serve the purpose of manipulating the items, but it doesn't cover easily the need of having multiple arrays built for you depending on conditions you apply to the items.
