@@ -76,7 +76,7 @@ _callbackfn_ is called with three arguments: the value of the element, the index
 The range of elements processed by *partition* is set before the first call to callbackfn. Elements which are appended to the array after the call to **partition** begins will not be visited by _callbackfn_. If existing elements of the array are changed their value as passed to _callbackfn_ will be the value at the time **partition** visits them; elements that are deleted after the call to **partition** begins and before being visited are not visited.
 
 When the **partition** method is called with one or two arguments, the following steps are taken:
-
+```
 1. Let `O` be ? `ToObject(this value)`.
 2. Let `len` be ? `LengthOfArrayLike(O)`.
 3. If `IsCallable(callbackfn)` is `false`, throw a `TypeError` exception.
@@ -86,19 +86,20 @@ When the **partition** method is called with one or two arguments, the following
 7. Let k be 0.
 8. Let `toA` be 0.
 9. Let `toB` be 0.
-10. Repeat, while `k < len`,
-  a. Let `Pk` be ! ToString(k).
-  b. Let `kPresent` be ? HasProperty(O, Pk).
-  c. If `kPresent` is `true`, then
-    i. Let `kValue` be ? `Get(O, Pk)`.
-    ii. Let `selected` be ! `ToBoolean(? Call(callbackfn, thisArg, « kValue, k, O »))`.
-    iii. If `selected` is `true`, then
-      1. Perform ? `CreateDataPropertyOrThrow(A, ! ToString(toA), kValue)`.
-      2. Set `toA` to `toA + 1`.
-    iv. Else,
-      1. Perform ? `CreateDataPropertyOrThrow(B, ! ToString(toB), kValue)`.
-      2. Set `toB` to `toB + 1`.
-  d. Set `k` to `k + 1`
+10. Repeat while `k < len`: 
+    a. Let `Pk` be ! ToString(k).
+    b. Let `kPresent` be ? HasProperty(O, Pk).
+    c. If `kPresent` is `true`, then
+        i. Let `kValue` be ? `Get(O, Pk)`.
+        ii. Let `selected` be ! `ToBoolean(? Call(callbackfn, thisArg, « kValue, k, O »))`.
+        iii. If `selected` is `true`, then
+            1. Perform ? `CreateDataPropertyOrThrow(A, ! ToString(toA), kValue)`.
+            2. Set `toA` to `toA + 1`.
+        iv. Else,
+            1. Perform ? `CreateDataPropertyOrThrow(B, ! ToString(toB), kValue)`.
+            2. Set `toB` to `toB + 1`.
+    d. Set `k` to `k + 1`
 11. Perform ? `CreateDataPropertyOrThrow(Tuple, ! ToString(0), A)
 12. Perform ? `CreateDataPropertyOrThrow(Tuple, ! ToString(1), B)
 13. Return `Tuple`
+```
