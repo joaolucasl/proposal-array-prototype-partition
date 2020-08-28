@@ -52,6 +52,7 @@ for (const number of numbers) {
 - Elixir - [`Enum.split_with`](https://hexdocs.pm/elixir/Enum.html#split_with/2)
 - Kotlin - [`Collection.partition`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/partition.html)
 - Erlang = [`List.partition`](https://erlang.org/doc/man/lists.html#partition-2)
+- Rust = [`trait.Iterator.partition`](https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.partition)
 
 ### Javascript Ecosystem
 - Lodash - [`_.partition(collection, predicate)`](https://lodash.com/docs/4.17.15#partition)
