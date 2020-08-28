@@ -61,3 +61,46 @@ for (const number of numbers) {
 - Ramda - [`R.partition(predicate, filterable)`](https://ramdajs.com/docs/#partition)
 - RxJS - [`Observable.partition(predicate)`](https://www.learnrxjs.io/learn-rxjs/operators/transformation/partition)
 - Collect.js - [`.partition(predicate)`](https://collect.js.org/api/partition.html)
+
+## Draft Spec
+
+### **Array.prototype.partition ( callbackfn [ , thisArg ] )**
+
+> NOTE - _callbackfn_ should be a function that accepts three arguments and returns a value that is coercible to the Boolean value true or false. **partition** calls callbackfn once for each element in the array, in ascending order, and constructs two new arrays: one of all the values for which _callbackfn_ returns `true` and another of all the values for which _callbackfn_ returns `false`. _callbackfn_ is called only for elements of the array which actually exist; it is not called for missing elements of the array.
+
+If a thisArg parameter is provided, it will be used as the `this` value for each invocation of _callbackfn_. If it is not provided, `undefined` is used instead.
+
+_callbackfn_ is called with three arguments: the value of the element, the index of the element, and the object being traversed.
+
+**partition** does not directly mutate the object on which it is called but the object may be mutated by the calls to _callbackfn_.
+
+The range of elements processed by *partition* is set before the first call to callbackfn. Elements which are appended to the array after the call to **partition** begins will not be visited by _callbackfn_. If existing elements of the array are changed their value as passed to _callbackfn_ will be the value at the time **partition** visits them; elements that are deleted after the call to **partition** begins and before being visited are not visited.
+
+When the **partition** method is called with one or two arguments, the following steps are taken:
+```
+1. Let `O` be ? `ToObject(this value)`.
+2. Let `len` be ? `LengthOfArrayLike(O)`.
+3. If `IsCallable(callbackfn)` is `false`, throw a `TypeError` exception.
+4. Let `A` be ? ArraySpeciesCreate(O, 0).
+5. Let `B` be ? ArraySpeciesCreate(O, 0).
+6. Let `Tuple` be ? ArrayCreate(2).
+7. Let k be 0.
+8. Let `toA` be 0.
+9. Let `toB` be 0.
+10. Repeat while `k < len`: 
+    a. Let `Pk` be ! ToString(k).
+    b. Let `kPresent` be ? HasProperty(O, Pk).
+    c. If `kPresent` is `true`, then
+        i. Let `kValue` be ? `Get(O, Pk)`.
+        ii. Let `selected` be ! `ToBoolean(? Call(callbackfn, thisArg, « kValue, k, O »))`.
+        iii. If `selected` is `true`, then
+            1. Perform ? `CreateDataPropertyOrThrow(A, ! ToString(toA), kValue)`.
+            2. Set `toA` to `toA + 1`.
+        iv. Else,
+            1. Perform ? `CreateDataPropertyOrThrow(B, ! ToString(toB), kValue)`.
+            2. Set `toB` to `toB + 1`.
+    d. Set `k` to `k + 1`
+11. Perform ? `CreateDataPropertyOrThrow(Tuple, ! ToString(0), A)
+12. Perform ? `CreateDataPropertyOrThrow(Tuple, ! ToString(1), B)
+13. Return `Tuple`
+```
