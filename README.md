@@ -60,3 +60,4 @@ for (const number of numbers) {
 - Underscore - [`_.partition(list, predicate)`](http://underscorejs.org/#partition)
 - Ramda - [`R.partition(predicate, filterable)`](https://ramdajs.com/docs/#partition)
 - RxJS - [`Observable.partition(predicate)`](https://www.learnrxjs.io/learn-rxjs/operators/transformation/partition)
+- Collect.js - [`.partition(predicate)`](https://collect.js.org/api/partition.html)
