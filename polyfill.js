@@ -35,7 +35,7 @@ if (!Array.prototype.partition) {
       if (kPresent) {
         // i. Let kValue be ? Get(O, Pk).
         var kValue = O[Pk];
-        console.log({ kValue })
+
         // ii. Let selected be ! ToBoolean(? Call(callbackfn, thisArg, « kValue, k, O »)).
         var selected = Boolean(callbackfn.call(thisArg, kValue, k, O));
         // iii. If selected is true, then
