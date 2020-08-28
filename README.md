@@ -46,8 +46,13 @@ for (const number of numbers) {
 
 
 ## Prior art
+### Other Languages
 - Ruby - [`Enumerable.partition`](https://apidock.com/ruby/Enumerable/partition)
 - OCaml - [`List.partition`](https://caml.inria.fr/pub/docs/manual-ocaml/libref/List.html)
 - Elixir - [`Enum.split_with`](https://hexdocs.pm/elixir/Enum.html#split_with/2)
 - Kotlin - [`Collection.partition`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/partition.html)
 - Erlang = [`List.partition`](https://erlang.org/doc/man/lists.html#partition-2)
+
+### Javascript Ecosystem
+- Lodash - [`_.partition(collection, predicate)`](https://lodash.com/docs/4.17.15#partition)
+- Underscore - [`_.partition(list, predicate)`](http://underscorejs.org/#partition)
