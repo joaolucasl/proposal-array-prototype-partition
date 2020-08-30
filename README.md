@@ -17,7 +17,7 @@ While `.filter` is a helpful way of eliminating unwanted items from your collect
 
 ## Current State
 ### Using `.filter`
-```
+```js
 const numbers = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,15]
 
 const isEven = n => n % 2 === 0
